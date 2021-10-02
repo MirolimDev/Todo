@@ -1,0 +1,13 @@
+
+{% for task in tasks %}
+	<div class="item-row">
+		<a class="btn btn-sm btn-info" href="{% url 'update' task.id %}">Update</a>
+		<a class="btn btn-sm btn-danger" href="">Delete</a>
+
+		{% if task.succesfull_done == True %}
+			<del class='del-data'>{{task}}</del>
+		{% else %}
+			<span class="data-">{{task}}</span>
+		{% endif %}
+	</div>
+{% endfor %}
